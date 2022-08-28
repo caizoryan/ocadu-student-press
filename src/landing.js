@@ -35,8 +35,6 @@ const HeaderContainer = styled.div`
   display: flex;
 `;
 const Header = styled.h1`
-  /* padding-top: 20vh;
-  padding-left: 30vw; */
   font-size: 11vw;
   line-height: 0.9em;
   font-family: urw-din-condensed, sans-serif;
