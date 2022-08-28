@@ -1,13 +1,94 @@
 import React from "react";
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { animate, motion } from "framer-motion";
 
 export default function Landing() {
+  const speed = 100;
+  function textFn(myArray) {
+    let myText = "";
+    for (let i = 0; i < myArray.length; i++) {
+      myText = myText + myArray[i];
+    }
+    return myText;
+  }
+  const [text1, setText1] = useState({
+    name: "&420s",
+    dName: "VOICE",
+    reveal() {
+      var one = this.name.split("");
+      var two = this.dName.split("");
+      for (let i = 0; i < one.length; i++) {
+        setTimeout(function () {
+          one[i] = two[i];
+          const newText = textFn(one);
+          setText1((t) => ({
+            ...t,
+            name: newText,
+          }));
+        }, i * speed);
+      }
+    },
+  });
+  const [text2, setText2] = useState({
+    name: "69",
+    dName: "OF",
+
+    reveal() {
+      var one = this.name.split("");
+      var two = this.dName.split("");
+      for (let i = 0; i < one.length; i++) {
+        setTimeout(function () {
+          one[i] = two[i];
+          const newText = textFn(one);
+          console.log(newText);
+          setText2((t) => ({
+            ...t,
+            name: newText,
+          }));
+        }, i * speed);
+      }
+    },
+  });
+  const [text3, setText3] = useState({
+    name: "7e&r(eyi",
+    dName: "STUDENTS",
+
+    reveal() {
+      var one = this.name.split("");
+      var two = this.dName.split("");
+      for (let i = 0; i < one.length; i++) {
+        setTimeout(function () {
+          one[i] = two[i];
+          const newText = textFn(one);
+          console.log(newText);
+          setText3((t) => ({
+            ...t,
+            name: newText,
+          }));
+        }, i * speed);
+      }
+    },
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      text1.reveal();
+    }, 500);
+    setTimeout(() => {
+      text2.reveal();
+    }, 500 + text1.name.length * speed);
+    setTimeout(() => {
+      text3.reveal();
+    }, 500 + (text1.name.length + text2.name.length) * speed);
+  }, []);
   return (
     <Wrapper>
       <HeaderContainer>
         <Header>
-          VOICE <br></br>
-          <OfSpan></OfSpan> OF <br></br> <StudentSpan></StudentSpan> STUDENTS
+          {text1.name} <br></br>
+          <OfSpan></OfSpan> {text2.name} <br></br> <StudentSpan></StudentSpan>{" "}
+          {text3.name}
         </Header>
       </HeaderContainer>
     </Wrapper>
@@ -23,6 +104,7 @@ const StudentSpan = styled.span`
   padding-left: 3.7vw;
 `;
 const Wrapper = styled.div`
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +116,7 @@ const Wrapper = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
 `;
-const Header = styled.h1`
+const Header = styled(motion.h1)`
   font-size: 11vw;
   line-height: 0.9em;
   font-family: urw-din-condensed, sans-serif;
