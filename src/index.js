@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Landing from "./landing";
+import Entry from "./entry";
+import Main from "./main";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Landing />);
+root.render(<Main />);

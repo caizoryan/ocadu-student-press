@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import NavBar from "./navbar";
 import { useState, useEffect } from "react";
 import { animate, motion } from "framer-motion";
 
@@ -74,16 +75,31 @@ export default function Landing() {
   useEffect(() => {
     setTimeout(() => {
       text1.reveal();
-    }, 500);
+    }, 3100);
     setTimeout(() => {
       text2.reveal();
-    }, 500 + text1.name.length * speed);
+    }, 3100 + text1.name.length * speed);
     setTimeout(() => {
       text3.reveal();
-    }, 500 + (text1.name.length + text2.name.length) * speed);
+    }, 3100 + (text1.name.length + text2.name.length) * speed);
   }, []);
+
+  const animation = {
+    hide: {
+      y: 0,
+    },
+    show: {
+      y: "-100vh",
+      transition: {
+        ease: "easeOut",
+        duration: 0.7,
+        delay: 2.3,
+      },
+    },
+  };
   return (
-    <Wrapper>
+    <Wrapper variants={animation} animate='show' initial='hide'>
+      {/* <NavBar></NavBar> */}
       <HeaderContainer>
         <Header>
           {text1.name} <br></br>
@@ -103,9 +119,12 @@ const OfSpan = styled.span`
 const StudentSpan = styled.span`
   padding-left: 3.7vw;
 `;
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   overflow: hidden;
   display: flex;
+  position: absolute;
+  top: 100vh;
+  left: 0;
   justify-content: center;
   align-items: center;
   color: ${primaryColor};
