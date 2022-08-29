@@ -35,7 +35,7 @@ const Wrapper = styled(motion.div)`
   width: 100vw;
   height: 170px;
   color: white;
-  background: #ff5252;
+  background: rgb(0, 0, 0, 0);
 `;
 
 const Logo = styled.h1`

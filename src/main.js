@@ -3,6 +3,8 @@ import React from "react";
 import Landing from "./landing";
 import Entry from "./entry";
 import NavBar from "./navbar";
+import Contact from "./contact";
+import About from "./about";
 
 export default function Main() {
   return (
@@ -10,6 +12,8 @@ export default function Main() {
       <NavBar />
       <Entry />
       <Landing />
+      <About />
+      <Contact />
     </>
   );
 }

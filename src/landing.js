@@ -99,11 +99,10 @@ export default function Landing() {
   };
   return (
     <Wrapper variants={animation} animate='show' initial='hide'>
-      {/* <NavBar></NavBar> */}
       <HeaderContainer>
         <Header>
           {text1.name} <br></br>
-          <OfSpan></OfSpan> {text2.name} <br></br> <StudentSpan></StudentSpan>{" "}
+          <OfSpan></OfSpan> {text2.name} <br></br> <StudentSpan></StudentSpan>
           {text3.name}
         </Header>
       </HeaderContainer>
