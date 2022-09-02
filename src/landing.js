@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import NavBar from "./navbar";
 import { useState, useEffect } from "react";
 import { animate, motion } from "framer-motion";
 

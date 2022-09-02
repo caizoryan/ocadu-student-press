@@ -22,7 +22,6 @@ function Contact() {
 export default Contact;
 
 const Main = styled.div`
-  /* margin-top: -100vh; */
   display: flex;
   height: 100vh;
   width: 100vw;
