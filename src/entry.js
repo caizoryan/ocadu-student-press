@@ -1,14 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Entry() {
-  // let height;
-  // useEffect(() => {
-  //   height = window.innerHeight;
-  //   console.log(height);
-  // });
   const animation = {
     hidden: {
       opacity: 0,
@@ -69,13 +63,12 @@ export default function Entry() {
     </>
   );
 }
-let secondaryColor = "#FF5252";
-let primaryColor = "#1E1E1E";
+
 const CleanUp = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   z-index: 90;
-  background: ${secondaryColor};
+  background: #ff5252;
 `;
 const TextContainer = styled(motion.div)`
   align-items: flex-start;
@@ -90,7 +83,7 @@ const Wrapper = styled(motion.div)`
   margin: auto;
   width: 100vw;
   height: 100vh;
-  background: ${secondaryColor};
+  background: #ff5252;
   color: white;
 `;
 

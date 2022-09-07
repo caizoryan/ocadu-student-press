@@ -138,4 +138,7 @@ const Header = styled(motion.h1)`
   line-height: 0.9em;
   font-family: urw-din-condensed, sans-serif;
   font-weight: 700;
+  @media only screen and (max-width: 800px) {
+    font-size: 80px;
+  }
 `;

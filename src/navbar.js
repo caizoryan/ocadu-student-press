@@ -44,4 +44,12 @@ const Logo = styled.h1`
   font-weight: 500;
   font-size: 2vw;
   line-height: 0.9em;
+  @media only screen and (max-width: 800px) {
+    font-size: 22px;
+    padding: 50px 50px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 50px 50px;
+    font-size: 18px;
+  }
 `;

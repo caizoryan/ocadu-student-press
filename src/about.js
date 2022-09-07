@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 export default function About() {
-  let redx = 100;
-  let redy = 200;
-  const redd = {
-    top: `${redx}px`,
-    left: `${redy}px`,
-  };
-
   return (
     <Community>
-      {/* <Circle style={redd} /> */}
       <p>
-        <Red>STUDENT PRESS</Red> will exist as a collective which <br />
+        <Red>STUDENT PRESS</Red> will exist as a&nbsp;collective&nbsp;which{" "}
+        <br />
         <Red>
-          <sup>1 </sup>COMMUNICATES FOR THE STUDENTS
+          <sup>1&nbsp;</sup>COMMUNICATES&nbsp;FOR THE&nbsp;STUDENTS
         </Red>{" "}
         while <br />
-        building a{" "}
+        building a
         <Red>
-          <sup>2 </sup>SENSE OF COMMUNITY
+          <sup> 2&nbsp;</sup>SENSE&nbsp;OF&nbsp;COMMUNITY
         </Red>
       </p>
     </Community>
@@ -48,6 +41,15 @@ const Community = styled.div`
     &:hover {
       transform: scale(1.01);
     }
+    @media only screen and (max-width: 800px) {
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 22px;
+      padding: 20px;
+      br {
+        display: none;
+      }
+    }
   }
 `;
 const Red = styled.span`
@@ -56,17 +58,6 @@ const Red = styled.span`
   font-style: normal;
   color: #ff5252;
   sup {
-    color: white;
     font-size: 1.2vw;
   }
-`;
-
-const Circle = styled.span`
-  height: 250px;
-  width: 250px;
-  background-color: #bbb;
-  border-radius: 50%;
-  position: absolute;
-  /* top: 100px;
-  left: 100px; */
 `;
